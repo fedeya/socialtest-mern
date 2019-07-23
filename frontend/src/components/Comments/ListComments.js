@@ -5,12 +5,15 @@ class ListComments extends Component {
 
   render() {
 
-    const { comments } = this.props;
+    const { comments, cantidad } = this.props;
 
     return (
       <div className="card mt-3">
         <div className="card-body">
-          <h4>Comentarios</h4>
+          <div className="d-flex justify-content-between">
+            <h4>Comentarios </h4>
+            <p>{cantidad}</p>
+          </div>
 
           {
             comments.map(comment => (

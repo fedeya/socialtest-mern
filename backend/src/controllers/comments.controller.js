@@ -5,8 +5,12 @@ let commentCtrl = {};
 commentCtrl.getComments = async (req, res) => {
 
   const comments = await Comment.find({public_id: req.params.public_id});
+  const cantidad = await Comment.count({public_id: req.params.public_id});
 
-  res.json(comments);
+  res.json({
+    comments,
+    cantidad
+  });
 
 }
 

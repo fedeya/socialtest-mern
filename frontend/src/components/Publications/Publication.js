@@ -13,6 +13,7 @@ class Publication extends Component {
     content: "",
     author: "",
     date: "",
+    cantidad: 0,
     comments: []
   }
 
@@ -42,7 +43,8 @@ class Publication extends Component {
 
 
     this.setState({
-      comments: res.data
+      comments: res.data.comments,
+      cantidad: res.data.cantidad
     })
 
   }
@@ -50,7 +52,7 @@ class Publication extends Component {
   deletePublication = async () => {
     await axios.delete("http://localhost:4000/api/publications/"+ this.props.match.params.id);
     const comments = await axios.get("http://localhost:4000/api/comments/" + this.props.match.params.id);
-    comments.data.forEach( async (comment) => {
+    comments.data.comments.forEach( async (comment) => {
       await axios.delete("http://localhost:4000/api/comments/"+comment._id);
     })
     this.props.history.push("/")
@@ -95,6 +97,7 @@ class Publication extends Component {
             comments={this.state.comments}
             getComments={this.getComments}
             author={this.props.acc.username}
+            cantidad={this.state.cantidad}
           />)
           : <p className="mt-2">No hay Comentarios</p>
         }

@@ -24,6 +24,7 @@ yarn start | npm start
 * Morgan
 * Cors
 * Bcrypt
+* Mongoose
 * MongoDB
 
 ## Backend Routes
