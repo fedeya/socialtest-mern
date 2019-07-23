@@ -2,13 +2,6 @@
 
 ## Prueba de Red Social Utilizando el Stack MERN
 
-## Tecnologias
-
-* Bootstrap 4
-* React
-* Timeago.js
-* React-Router
-
 ## Deploy
 
 ```bash
@@ -17,6 +10,22 @@ yarn start | npm start
 cd ../frontend
 yarn start | npm start
 ```
+
+## Technologies
+
+* Bootstrap 4
+* React
+* React-Datepicker
+* React-Router
+* Timeago.js
+* Axios
+* Node.js
+* Express
+* Morgan
+* Cors
+* Bcrypt
+* MongoDB
+
 
 
 ## Frontend Images
